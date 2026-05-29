@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud Guardian Terminal Preview</title>
+  <desc id="desc">Terminal preview showing report generation and passing unit tests.</desc>
+  <rect width="1100" height="430" fill="#eef2f7"/>
+  <rect x="80" y="60" width="940" height="300" rx="8" fill="#121821"/>
+  <rect x="80" y="60" width="940" height="44" rx="8" fill="#202938"/>
+  <circle cx="112" cy="82" r="7" fill="#f05b5b"/>
+  <circle cx="138" cy="82" r="7" fill="#f7c948"/>
+  <circle cx="164" cy="82" r="7" fill="#46b275"/>
+  <text x="200" y="88" font-family="Consolas, 'Courier New', monospace" font-size="15" fill="#c9d3e0">cloud_security_posture_analyzer</text>
+
+  <text x="120" y="150" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#8bd5ff">$ python -m cloud_guardian.cli --data-dir data --output cloud_security_report.md</text>
+  <text x="120" y="192" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#d8e2ee">Generated cloud_security_report.md with 10 findings.</text>
+
+  <text x="120" y="252" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#8bd5ff">$ python -m unittest discover -s tests</text>
+  <text x="120" y="294" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#d8e2ee">Ran 3 tests in 0.001s</text>
+  <text x="120" y="326" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700" fill="#76e39c">OK</text>
+</svg>

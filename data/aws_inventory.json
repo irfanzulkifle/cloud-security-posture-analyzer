@@ -1,0 +1,45 @@
+{
+  "account_id": "123456789012",
+  "region": "ap-southeast-1",
+  "environment": "training-lab",
+  "s3_buckets": [
+    {
+      "name": "student-portfolio-public-assets",
+      "public_access": true,
+      "encryption": "AES256",
+      "contains_sensitive_data": false
+    },
+    {
+      "name": "student-portfolio-customer-exports",
+      "public_access": false,
+      "encryption": "aws:kms",
+      "contains_sensitive_data": true
+    },
+    {
+      "name": "student-portfolio-app-logs",
+      "public_access": false,
+      "encryption": "None",
+      "contains_sensitive_data": true
+    }
+  ],
+  "iam_users": [
+    {
+      "username": "break-glass-admin",
+      "mfa_enabled": false,
+      "access_key_age_days": 120,
+      "policies": ["AdministratorAccess"]
+    },
+    {
+      "username": "ci-deploy-user",
+      "mfa_enabled": true,
+      "access_key_age_days": 32,
+      "policies": ["PowerUserAccess"]
+    },
+    {
+      "username": "readonly-auditor",
+      "mfa_enabled": true,
+      "access_key_age_days": 145,
+      "policies": ["ReadOnlyAccess"]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+group_id,resource_name,direction,protocol,port,cidr,description
+sg-001,web-server,ingress,tcp,80,0.0.0.0/0,HTTP from internet
+sg-001,web-server,ingress,tcp,443,0.0.0.0/0,HTTPS from internet
+sg-002,admin-bastion,ingress,tcp,22,0.0.0.0/0,SSH from anywhere
+sg-003,database,ingress,tcp,3306,0.0.0.0/0,MySQL accidentally exposed
+sg-004,internal-cache,ingress,tcp,6379,10.0.0.0/16,Redis from VPC
+sg-005,windows-jumpbox,ingress,tcp,3389,203.0.113.10/32,RDP from office IP
