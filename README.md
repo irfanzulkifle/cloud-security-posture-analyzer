@@ -1,6 +1,6 @@
 # Cloud Security Posture Analyzer
 
-Python tool that analyzes AWS-style inventory, security group rules, and VPC Flow Logs to identify cloud security risks, map findings to CIS AWS Foundations controls, and generate a prioritized Markdown report.
+Python tool that analyzes AWS-style inventory, security group rules and VPC Flow Logs to identify cloud security risks, map findings to CIS AWS Foundations controls and generate a prioritized Markdown report.
 
 ## Overview
 
@@ -11,7 +11,7 @@ The analyzer reviews:
 - IAM users for missing MFA on privileged identities and stale access keys.
 - VPC Flow Log samples for repeated rejected traffic against administrative ports.
 
-Each finding is scored by severity, mapped to CIS AWS Foundations Benchmark v1.4.0 where applicable, and written to a Markdown report suitable for both technical and non-technical readers.
+Each finding is scored by severity, mapped to CIS AWS Foundations Benchmark v1.4.0 where applicable and written to a Markdown report suitable for both technical and non-technical readers.
 
 ## Architecture
 
@@ -24,7 +24,7 @@ data/             # sample AWS-style inputs
 docs/             # preview assets
 ```
 
-The analysis is split into focused functions: `load_*` (IO), `analyze_*` (domain logic), and `build_markdown_report` (presentation). Findings are immutable `dataclass` records, which keeps the analysis pure and easy to test.
+The analysis is split into focused functions: `load_*` (IO), `analyze_*` (domain logic) and `build_markdown_report` (presentation). Findings are immutable `dataclass` records, which keeps the analysis pure and easy to test.
 
 ## Requirements
 
@@ -74,9 +74,9 @@ This project includes CIS AWS Foundations Benchmark v1.4.0 alignment for selecte
 
 - Support real AWS exports from the AWS CLI.
 - Export findings as JSON for SIEM or ticketing workflows.
-- Expand CIS AWS Foundations coverage across CloudTrail, AWS Config, logging, and monitoring checks.
+- Expand CIS AWS Foundations coverage across CloudTrail, AWS Config, logging and monitoring checks.
 - Add severity filtering to the command-line interface.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
