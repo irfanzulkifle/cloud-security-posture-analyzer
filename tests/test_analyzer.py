@@ -43,6 +43,35 @@ class AnalyzerTests(unittest.TestCase):
         self.assertIn("CIS AWS Foundations Benchmark v1.4.0", report)
         self.assertIn("Compliance Coverage", report)
 
+    def test_broad_cidr_is_treated_as_world_open(self):
+        # A /1 covers half the IPv4 space - effectively internet-exposed.
+        findings = analyze_security_groups(
+            [
+                {
+                    "group_id": "sg-broad",
+                    "direction": "ingress",
+                    "port": "22",
+                    "cidr": "0.0.0.0/1",
+                }
+            ]
+        )
+        self.assertEqual(1, len(findings))
+        self.assertEqual("critical", findings[0].severity)
+
+    def test_private_cidr_is_not_flagged(self):
+        # 10.0.0.0/16 is internal VPC space, not world-open.
+        findings = analyze_security_groups(
+            [
+                {
+                    "group_id": "sg-internal",
+                    "direction": "ingress",
+                    "port": "22",
+                    "cidr": "10.0.0.0/16",
+                }
+            ]
+        )
+        self.assertEqual(0, len(findings))
+
 
 if __name__ == "__main__":
     unittest.main()

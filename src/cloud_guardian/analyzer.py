@@ -69,7 +69,12 @@ def load_flow_logs(path: Path) -> list[dict]:
 
 def is_public_cidr(cidr: str) -> bool:
     network = ipaddress.ip_network(cidr, strict=False)
-    return network == ipaddress.ip_network("0.0.0.0/0")
+    if network.version != 4:
+        return False
+    # Exact 0.0.0.0/0 is fully open. Any IPv4 range this broad (prefix length
+    # <= 1, i.e. /0 or /1) exposes the service to roughly half the internet or
+    # more, so it is treated as world-open for security-group ingress.
+    return network.prefixlen <= 1
 
 
 def is_private_ip(address: str) -> bool:

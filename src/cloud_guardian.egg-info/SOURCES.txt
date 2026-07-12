@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/cloud_guardian/__init__.py
+src/cloud_guardian/analyzer.py
+src/cloud_guardian/cli.py
+src/cloud_guardian.egg-info/PKG-INFO
+src/cloud_guardian.egg-info/SOURCES.txt
+src/cloud_guardian.egg-info/dependency_links.txt
+src/cloud_guardian.egg-info/top_level.txt
+tests/test_analyzer.py

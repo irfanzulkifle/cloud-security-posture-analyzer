@@ -1,3 +1,13 @@
+Metadata-Version: 2.4
+Name: cloud-guardian
+Version: 0.1.0
+Summary: Analyze AWS-style security data and generate a prioritized posture report.
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # Cloud Security Posture Analyzer
 
 Python tool that analyzes AWS-style inventory, security group rules, and VPC Flow Logs to identify cloud security risks, map findings to CIS AWS Foundations controls, and generate a prioritized Markdown report.
